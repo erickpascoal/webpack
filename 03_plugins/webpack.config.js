@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 const DotEnvPlugin = require("dotenv-webpack");
+const HtmlWebpackPlgin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -32,5 +33,8 @@ module.exports = {
       AUTOR: JSON.stringify("Erick"),
     }),
     new DotEnvPlugin(),
+    new HtmlWebpackPlgin({
+      title: "Plugins",
+    }),
   ],
 };
