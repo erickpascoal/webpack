@@ -3,6 +3,7 @@ import Logo from "./components/Logo";
 import Title from "./components/Ttitle";
 import warningTemplate from "./templates/warning.html";
 import "./styles/warning.scss";
+import text from "./assets/files/text.txt";
 
 // loader de css
 const title = new Title();
@@ -27,3 +28,6 @@ console.log(teste2);
 
 //loader de html
 document.querySelector("body").innerHTML += warningTemplate;
+
+//loader de arquivos txt e etc (aparentemente depreciado)
+document.querySelector("body").innerHTML += text;
