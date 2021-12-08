@@ -4,6 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const webpack = require("webpack");
 const DotEnvPlugin = require("dotenv-webpack");
 const HtmlWebpackPlgin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -25,6 +26,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name]-[contenthash].css",
     }),
