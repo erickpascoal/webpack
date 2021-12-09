@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -7,4 +8,12 @@ module.exports = {
     filename: "bundle.js",
   },
   mode: "production",
+
+  plugins: [
+    // new TerserPlugin(),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      title: "Modes",
+    }),
+  ],
 };

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack --config webpack.dev.config.js"
+    "dev": "webpack serve --config webpack.dev.config.js --open "
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,8 @@
     "webpack-cli": "^4.9.1"
   },
   "devDependencies": {
-    "terser-webpack-plugin": "^5.2.5"
+    "html-webpack-plugin": "^5.5.0",
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack-dev-server": "^4.6.0"
   }
 }

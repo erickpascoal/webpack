@@ -1,5 +1,6 @@
 const path = require("path");
 const TerserPlugin = require("terser-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -8,8 +9,19 @@ module.exports = {
     filename: "bundle.js",
   },
   mode: "development",
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    port: 9000,
+  },
 
   plugins: [
-    // new TerserPlugin()
+    // new TerserPlugin(),
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      title: "Modes",
+    }),
   ],
 };
