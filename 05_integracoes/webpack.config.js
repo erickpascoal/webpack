@@ -9,6 +9,14 @@ module.exports = {
     filename: "bundle-[contenthash].js",
   },
   mode: "development",
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Itegrações",
