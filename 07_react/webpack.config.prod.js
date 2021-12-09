@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-
-const bundlePath = path.resolve(__dirname, "public");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const bundlePath = path.resolve(__dirname, "dist");
 
 module.exports = {
   entry: "./src/index.js",
@@ -9,13 +9,13 @@ module.exports = {
     path: bundlePath,
     filename: "main.js",
   },
-  mode: "development",
+  mode: "production",
   devServer: {
     static: {
       directory: bundlePath,
     },
     compress: true,
-    port: 9000,
+    port: 3333,
   },
   module: {
     rules: [
@@ -30,7 +30,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(bundlePath, "index.html"),
+      template: path.resolve(__dirname, "public", "index.html"),
     }),
+    new CleanWebpackPlugin(),
   ],
 };
